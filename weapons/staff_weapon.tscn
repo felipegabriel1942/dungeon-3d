@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dbb2q1npvnad2"]
+
+[ext_resource type="PackedScene" uid="uid://6tuc84rnroep" path="res://weapons/hitscan_weapon.tscn" id="1_prp3w"]
+[ext_resource type="PackedScene" uid="uid://qh8p0hstbras" path="res://weapons/Staff.gltf" id="2_dc2hw"]
+
+[node name="StaffWeapon" unique_id=1437097646 node_paths=PackedStringArray("weapon_mesh") instance=ExtResource("1_prp3w")]
+fire_rate = 1.0
+weapon_mesh = NodePath("Staff")
+
+[node name="Staff" parent="." index="1" unique_id=1797676394 instance=ExtResource("2_dc2hw")]
+transform = Transform3D(0.9976926, -0.023998607, -0.06351048, 0.06789339, 0.35265917, 0.93328553, 0, -0.935444, 0.35347477, 0.57669145, -0.80302095, -0.8)
+
+[node name="staff_B" parent="Staff" index="0" unique_id=1128926797]
+layers = 2
+
+[editable path="Staff"]

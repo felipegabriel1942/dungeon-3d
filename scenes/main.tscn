@@ -1,0 +1,226 @@
+[gd_scene format=3 uid="uid://rcqlr203x7ol"]
+
+[ext_resource type="Environment" uid="uid://dwnmfenhawknc" path="res://scenes/environment.tres" id="1_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://dsjh5u6rjd6lp" path="res://player/player.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://c3unlkngpobff" path="res://enemy/enemy.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://b5usf0pbc2jg3" path="res://characters/skeleton_minion.tscn" id="3_sugp2"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_o5qli"]
+vertices = PackedVector3Array(-29.5, 0.5, -10.005173, -25, 0.5, -10.255173, -25, 0.5, -16.505173, -49.5, 0.5, -1.2551727, -41.75, 0.5, -1.0051727, -41.5, 0.5, -2.7551727, -24.5, 0.5, -17.255173, -29.5, 0.5, -2.7551727, -22.5, 0.5, -39.755173, -49.5, 0.5, -39.755173, -22.5, 0.5, -17.255173, -19, 0.5, -17.255173, -19, 0.5, -39.755173, -16.75, 0.5, -17.005173, -16.75, 0.5, -10.255173, -13.5, 0.5, -10.005173, -13.5, 0.5, -2.2551727, -4, 0.5, -2.5051727, 49.5, 0.5, -1.0051727, 49.5, 0.5, -39.755173, -3.75, 0.5, -0.7551727, -23.75, 4.25, -11.255173, -17.75, 4.25, -11.255173, -17.75, 4.25, -16.255173, -23.75, 4.25, -16.255173, -21.25, 0.5, -9.255173, -20.5, 0.5, -9.255173, -20.25, 0.5, -10.255173, -21.5, 0.5, -10.255173, -18.5, 0.5, -15.505173, -23.25, 0.5, -15.505173, -18.5, 0.5, -10.255173, -23.25, 0.5, -10.255173, -23.25, 4.5, 10.244827, -23, 4.25, 12.494827, -18.5, 4.25, 12.494827, -18.25, 4.5, 10.244827, -14.25, 4.5, 4.2448273, -28.25, 4.5, -2.0051727, -30.5, 4.5, -1.7551727, -30.5, 4.5, 3.2448273, -28.25, 4.5, 3.4948273, -14.25, 4.5, -1.5051727, -17.5, 4.5, -9.005173, -24, 4.5, -9.005173, -14.5, 4.5, 10.244827, -14.5, 4.5, -9.005173, -28.25, 4.5, -9.005173, -28.25, 4.5, 10.244827, -20.25, 0.5, -8.505173, -21.5, 0.5, -8.505173, -27.75, 0.5, -2.0051727, -27.75, 0.5, -8.505173, -15.25, 0.5, -2.0051727, -15.25, 0.5, -8.505173, -27.75, 0.5, -0.0051727295, -28.5, 0.5, 0.24482727, -28.5, 0.5, 0.9948273, -27.75, 0.5, 1.2448273, -27.5, 0.5, 9.494827, -21.5, 0.5, 9.494827, -15.25, 0.5, -0.0051727295, -21.25, 0.5, 10.244827, -20.5, 0.5, 10.244827, -20.25, 0.5, 9.494827, -15.25, 0.5, 1.2448273, -14.5, 0.5, 0.9948273, -14.5, 0.5, 0.24482727, -15.25, 0.5, 9.494827, -41, 4.5, -1.7551727, -41, 4.5, 3.2448273, -8.5, 4.5, 4.2448273, -8.25, 4.5, 5.9948273, -4.5, 4.5, 5.7448273, -4.5, 4.5, -1.5051727, -49.5, 0.5, 2.7448273, -41.75, 0.5, 2.4948273, -29.5, 0.5, 1.2448273, -29.5, 0.5, -0.0051727295, -40, 0.5, -1.0051727, -40, 0.5, 2.4948273, -29.5, 0.5, 2.4948273, -29.5, 0.5, -1.0051727, -3.75, 0.5, 24.244827, 0.25, 0.5, 24.244827, 0.5, 0.5, 24.744827, 49.5, 0.5, 24.744827, -13.75, 0.5, 0.9948273, -13.75, 0.5, 0.24482727, -5.5, 0.5, 24.244827, -5.5, 0.5, -0.5051727, -7.25, 0.5, 2.2448273, -6.25, 0.5, 24.494827, -13.5, 0.5, -0.5051727, -13.5, 0.5, 1.9948273, -7.25, 0.5, 25.994827, -6, 0.5, 25.994827, -41.5, 0.5, 4.2448273, -29.25, 0.5, 10.994827, -29.5, 0.5, 4.2448273, -24, 0.5, 29.744827, -24, 0.5, 11.244827, -49.5, 0.5, 29.744827, -17.75, 0.5, 26.744827, -14.25, 0.5, 26.744827, -14, 0.5, 24.244827, -13.5, 0.5, 10.994827, -17.75, 0.5, 11.244827, -9, 0.5, 3.7448273, -13.5, 0.5, 3.7448273, -9, 0.5, 24.244827, -8.25, 4.5, 23.244827, -4.5, 4.5, 23.244827, -20.5, 0.5, 10.994827, -21.5, 0.5, 11.244827, -19.5, 0.5, 28.244827, -22.25, 0.5, 11.244827, -22.25, 0.5, 30.244827, -12.5, 0.5, 29.994827, -12.5, 0.5, 28.744827, -14, 0.5, 28.994827, -19.5, 0.5, 11.244827, -14.25, 0.5, 28.494827, -23, 4.25, 25.494827, -18.5, 4.25, 25.494827, -13.25, 4.5, 27.744827, -15.75, 4.25, 27.744827, -15.75, 4.25, 31.244827, -13.25, 4.5, 31.244827, -13, 4.5, 33.744827, -0.5, 4.5, 33.744827, -4.25, 4.5, 25.244827, -8.5, 4.5, 25.244827, -0.5, 4.5, 25.244827, -13, 4.5, 25.244827, 0.5, 0.5, 34.494827, 0, 0.5, 34.744827, 0, 0.5, 59.244827, 49.5, 0.5, 59.244827, -18.25, 4.25, 27.744827, -23, 4.25, 31.244827, -12.5, 0.5, 25.994827, -1.25, 0.5, 32.744827, -1.25, 0.5, 25.994827, -12.5, 0.5, 32.744827, -24, 0.5, 31.744827, -22.25, 0.5, 31.994827, -49.5, 0.5, 59.244827, -22.5, 0.5, 59.244827, -14.25, 0.5, 34.494827, -14.25, 0.5, 31.994827, -13.75, 0.5, 34.744827, -13.75, 0.5, 59.244827)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(5, 4, 3), PackedInt32Array(0, 6, 2), PackedInt32Array(0, 7, 5), PackedInt32Array(5, 3, 0), PackedInt32Array(0, 3, 6), PackedInt32Array(6, 3, 8), PackedInt32Array(8, 3, 9), PackedInt32Array(8, 10, 6), PackedInt32Array(8, 12, 10), PackedInt32Array(10, 12, 11), PackedInt32Array(15, 14, 13), PackedInt32Array(15, 17, 16), PackedInt32Array(15, 13, 17), PackedInt32Array(17, 13, 12), PackedInt32Array(17, 12, 18), PackedInt32Array(18, 12, 19), PackedInt32Array(13, 11, 12), PackedInt32Array(18, 20, 17), PackedInt32Array(24, 23, 21), PackedInt32Array(21, 23, 22), PackedInt32Array(25, 28, 26), PackedInt32Array(26, 28, 27), PackedInt32Array(28, 30, 27), PackedInt32Array(27, 30, 29), PackedInt32Array(29, 31, 27), PackedInt32Array(28, 32, 30), PackedInt32Array(34, 33, 35), PackedInt32Array(35, 33, 36), PackedInt32Array(37, 36, 33), PackedInt32Array(39, 38, 40), PackedInt32Array(40, 38, 41), PackedInt32Array(44, 43, 42), PackedInt32Array(22, 43, 21), PackedInt32Array(21, 43, 44), PackedInt32Array(38, 44, 41), PackedInt32Array(41, 44, 42), PackedInt32Array(41, 42, 37), PackedInt32Array(41, 37, 33), PackedInt32Array(37, 45, 36), PackedInt32Array(43, 46, 42), PackedInt32Array(38, 47, 44), PackedInt32Array(33, 48, 41), PackedInt32Array(26, 49, 25), PackedInt32Array(25, 49, 50), PackedInt32Array(52, 50, 51), PackedInt32Array(49, 54, 53), PackedInt32Array(49, 53, 50), PackedInt32Array(50, 53, 51), PackedInt32Array(56, 55, 57), PackedInt32Array(57, 55, 58), PackedInt32Array(55, 51, 59), PackedInt32Array(59, 51, 60), PackedInt32Array(60, 51, 61), PackedInt32Array(61, 51, 53), PackedInt32Array(62, 60, 63), PackedInt32Array(63, 60, 64), PackedInt32Array(64, 60, 65), PackedInt32Array(65, 60, 61), PackedInt32Array(66, 65, 67), PackedInt32Array(67, 65, 61), PackedInt32Array(65, 68, 64), PackedInt32Array(59, 58, 55), PackedInt32Array(70, 69, 40), PackedInt32Array(40, 69, 39), PackedInt32Array(72, 71, 73), PackedInt32Array(73, 71, 74), PackedInt32Array(37, 42, 71), PackedInt32Array(71, 42, 74), PackedInt32Array(76, 75, 4), PackedInt32Array(4, 75, 3), PackedInt32Array(57, 77, 56), PackedInt32Array(56, 77, 78), PackedInt32Array(78, 77, 79), PackedInt32Array(79, 77, 80), PackedInt32Array(77, 81, 80), PackedInt32Array(79, 82, 78), PackedInt32Array(84, 83, 20), PackedInt32Array(84, 20, 85), PackedInt32Array(85, 20, 86), PackedInt32Array(86, 20, 18), PackedInt32Array(88, 87, 67), PackedInt32Array(67, 87, 66), PackedInt32Array(92, 91, 89), PackedInt32Array(89, 91, 90), PackedInt32Array(88, 93, 87), PackedInt32Array(87, 93, 94), PackedInt32Array(94, 93, 91), PackedInt32Array(91, 93, 90), PackedInt32Array(92, 96, 95), PackedInt32Array(92, 95, 91), PackedInt32Array(75, 76, 97), PackedInt32Array(99, 98, 97), PackedInt32Array(98, 101, 100), PackedInt32Array(97, 98, 75), PackedInt32Array(75, 98, 102), PackedInt32Array(102, 98, 100), PackedInt32Array(104, 103, 105), PackedInt32Array(105, 103, 107), PackedInt32Array(105, 107, 106), PackedInt32Array(106, 109, 108), PackedInt32Array(105, 106, 110), PackedInt32Array(110, 106, 108), PackedInt32Array(111, 72, 112), PackedInt32Array(112, 72, 73), PackedInt32Array(63, 113, 62), PackedInt32Array(62, 113, 114), PackedInt32Array(114, 115, 116), PackedInt32Array(116, 115, 117), PackedInt32Array(120, 119, 118), PackedInt32Array(113, 121, 114), PackedInt32Array(114, 121, 115), PackedInt32Array(115, 122, 120), PackedInt32Array(120, 118, 115), PackedInt32Array(115, 118, 117), PackedInt32Array(34, 35, 123), PackedInt32Array(123, 35, 124), PackedInt32Array(128, 127, 125), PackedInt32Array(125, 127, 126), PackedInt32Array(128, 125, 129), PackedInt32Array(129, 125, 132), PackedInt32Array(129, 132, 131), PackedInt32Array(129, 131, 130), PackedInt32Array(112, 131, 111), PackedInt32Array(111, 131, 132), PackedInt32Array(131, 133, 130), PackedInt32Array(132, 125, 134), PackedInt32Array(136, 135, 137), PackedInt32Array(137, 135, 138), PackedInt32Array(138, 135, 86), PackedInt32Array(135, 85, 86), PackedInt32Array(139, 126, 127), PackedInt32Array(123, 124, 139), PackedInt32Array(123, 139, 140), PackedInt32Array(140, 139, 127), PackedInt32Array(119, 141, 95), PackedInt32Array(119, 95, 118), PackedInt32Array(118, 95, 96), PackedInt32Array(118, 96, 144), PackedInt32Array(144, 96, 143), PackedInt32Array(144, 143, 142), PackedInt32Array(102, 100, 145), PackedInt32Array(145, 146, 102), PackedInt32Array(102, 146, 148), PackedInt32Array(102, 148, 147), PackedInt32Array(146, 150, 149), PackedInt32Array(149, 151, 146), PackedInt32Array(146, 151, 152), PackedInt32Array(146, 152, 148), PackedInt32Array(136, 137, 151), PackedInt32Array(151, 137, 152)]
+
+[node name="Main" type="Node3D" unique_id=523252939]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1195107459]
+environment = ExtResource("1_jyhfs")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=395518875]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+layers = 3
+shadow_enabled = true
+
+[node name="Player" parent="." unique_id=880234295 instance=ExtResource("1_o5qli")]
+transform = Transform3D(-0.006510017, 0, -0.9999788, 0, 1, 0, 0.9999788, 0, -0.006510017, -37.71824, 1.0000007, 0.619226)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=916370676]
+navigation_mesh = SubResource("NavigationMesh_o5qli")
+
+[node name="Dungeon" type="CSGCombiner3D" parent="NavigationRegion3D" unique_id=1651100602]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.744828)
+use_collision = true
+
+[node name="Entrance" type="CSGCombiner3D" parent="NavigationRegion3D/Dungeon" unique_id=1114178523]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.71824, 0, 0)
+
+[node name="Wall01" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/Entrance" unique_id=1627487178]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.046999216, 1.5000008, -11.655844)
+size = Vector3(6, 3, 0.5)
+
+[node name="Wall02" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/Entrance" unique_id=2046998235]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0504746, 1.4999996, -11.646214)
+size = Vector3(6, 3, 0.5)
+
+[node name="Wall03" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/Entrance" unique_id=1737571153]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.915804, 1.4999998, -6.31424)
+size = Vector3(6, 3, 0.5)
+
+[node name="Wall04" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/Entrance" unique_id=1695161519]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.018596888, 1.4999996, -6.3159223)
+size = Vector3(6, 3, 0.5)
+
+[node name="Wall05" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/Entrance" unique_id=1794858188]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.1934936, 1.4999998, -8.975808)
+size = Vector3(5.871521, 3, 0.5)
+
+[node name="Roof01" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/Entrance" unique_id=1722978202]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9154873, 3.529603, -8.981162)
+visible = false
+size = Vector3(13.037289, 1, 5.8883896)
+
+[node name="EntranceHall" type="CSGCombiner3D" parent="NavigationRegion3D/Dungeon" unique_id=2107816985]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.71824, 0, 0)
+
+[node name="Wall06" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/EntranceHall" unique_id=910802308]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 9.1616955, 1.4999998, -9.027447)
+size = Vector3(8, 3, 0.5)
+
+[node name="Wall08" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/EntranceHall" unique_id=1601925018]
+transform = Transform3D(-0.020279372, 0, 0.99979436, 0, 1, 0, -0.99979436, 0, -0.020279372, 9.233149, 1.4950842, -2.2147007)
+size = Vector3(6, 3, 0.5)
+
+[node name="Wall09" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/EntranceHall" unique_id=1250253388]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 16.272137, 1.4950842, 0.6385851)
+size = Vector3(14, 3, 0.5)
+
+[node name="Wall10" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/EntranceHall" unique_id=891400496]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 16.185791, 1.4950842, -19.114305)
+size = Vector3(14, 3, 0.5)
+
+[node name="Wall11" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/EntranceHall" unique_id=267636813]
+transform = Transform3D(-0.0073128305, 0, -0.9999732, 0, 1, 0, 0.9999732, 0, -0.0073128305, 23.333193, 1.4950842, -9.238944)
+size = Vector3(20.223267, 3, 0.5)
+
+[node name="Wall07" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/EntranceHall" unique_id=1255510665]
+transform = Transform3D(-0.020279372, 0, 0.99979436, 0, 1, 0, -0.99979436, 0, -0.020279372, 9.075365, 1.4950842, -16.171585)
+size = Vector3(6.338745, 3, 0.5)
+
+[node name="Roof02" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/EntranceHall" unique_id=2136533236]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.292614, 3.529603, -9.141964)
+size = Vector3(14.596969, 1, 19.89031)
+
+[node name="Door01" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/EntranceHall" unique_id=1795075767]
+transform = Transform3D(0.025827948, 0, 0.9996664, 0, 1, 0, -0.9996664, 0, 0.025827948, 9.156319, 1.2378886, -9.013372)
+operation = 2
+size = Vector3(2, 2.5, 1)
+
+[node name="Door02" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/EntranceHall" unique_id=1370134541]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 23.3504, 1.2341039, -9.053646)
+operation = 2
+size = Vector3(2, 2.5, 1)
+
+[node name="Door03" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/EntranceHall" unique_id=1312711645]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.728703, 0.97557044, 0.55095005)
+operation = 2
+size = Vector3(2, 2.5, 1)
+
+[node name="Door04" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/EntranceHall" unique_id=1541115370]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.935247, 1.2509187, -19.173035)
+operation = 2
+size = Vector3(2, 2.5, 1)
+
+[node name="Corridor_01" type="CSGCombiner3D" parent="NavigationRegion3D/Dungeon" unique_id=1272274108]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.71824, 0, 0)
+
+[node name="Wall12" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/Corridor_01" unique_id=1836781768]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 26.693527, 1.4950842, -6.910466)
+size = Vector3(6.182556, 3, 0.5)
+
+[node name="Wall13" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/Corridor_01" unique_id=1113383423]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 28.259445, 1.4950842, -11.195662)
+size = Vector3(9.314392, 3, 0.5)
+
+[node name="Wall14" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/Corridor_01" unique_id=1560438926]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 33.092834, 1.4950842, 2.0744162)
+size = Vector3(27.206245, 3, 0.5)
+
+[node name="Wall15" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/Corridor_01" unique_id=1421610241]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 29.500904, 1.4950842, 4.2649307)
+size = Vector3(21.872833, 3, 0.5)
+
+[node name="Roof03" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/Corridor_01" unique_id=110484208]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.479061, 3.529603, -8.387026)
+size = Vector3(10.3785305, 1, 6.384868)
+
+[node name="Roof04" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/Corridor_01" unique_id=1075761882]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.329746, 3.529603, 5.0784683)
+size = Vector3(4.6829643, 1, 20.561365)
+
+[node name="Room_01" type="CSGCombiner3D" parent="NavigationRegion3D/Dungeon" unique_id=1657988911]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.71824, 0, 0)
+
+[node name="Wall16" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/Room_01" unique_id=1875266652]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 19.995361, 1.4950842, -22.577692)
+size = Vector3(6.63916, 3, 0.5)
+
+[node name="Wall17" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/Room_01" unique_id=187209985]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 13.683552, 1.4950842, -22.609064)
+size = Vector3(6.5563965, 3, 0.5)
+
+[node name="Wall18" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/Room_01" unique_id=1069830258]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 16.910841, 1.4950842, -26.107338)
+size = Vector3(6.741211, 3, 0.5)
+
+[node name="Roof" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/Room_01" unique_id=1149736294]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.901358, 3.4456687, -22.724281)
+size = Vector3(6.7666016, 1, 7.300537)
+
+[node name="Hall_01" type="CSGCombiner3D" parent="NavigationRegion3D/Dungeon" unique_id=1542600014]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.71824, 0, 6.7222357)
+
+[node name="Wall19" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/Hall_01" unique_id=2068642254]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 24.363445, 1.4950842, 13.122134)
+size = Vector3(8.811737, 3, 0.5)
+
+[node name="Wall21" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/Hall_01" unique_id=1806155358]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 30.927347, 1.4950842, 8.712146)
+size = Vector3(13.446762, 3, 0.5)
+
+[node name="Wall22" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/Hall_01" unique_id=1118916156]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 30.927347, 1.4950842, 17.247635)
+size = Vector3(13.446762, 3, 0.5)
+
+[node name="Wall20" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/Hall_01" unique_id=1805732731]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 37.427505, 1.4950842, 13.122134)
+size = Vector3(8.811737, 3, 0.5)
+
+[node name="Door01" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/Hall_01" unique_id=321130971]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.211226, 1.2515101, 8.6919155)
+operation = 2
+size = Vector3(2, 2.5, 1)
+
+[node name="Door02" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/Hall_01" unique_id=2135244614]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 24.423504, 1.2173996, 12.964304)
+operation = 2
+size = Vector3(2, 2.5, 1)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/Hall_01" unique_id=1081147129]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.945929, 3.543621, 12.991241)
+size = Vector3(13.401489, 1, 9.094009)
+
+[node name="Corridor_02" type="CSGCombiner3D" parent="NavigationRegion3D/Dungeon" unique_id=627796752]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.71824, 0, 0)
+
+[node name="Wall16" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/Corridor_02" unique_id=671802176]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 19.436277, 1.4950842, 21.481125)
+size = Vector3(10.262455, 3, 0.5)
+
+[node name="Wall17" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/Corridor_02" unique_id=66984437]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 21.749203, 1.4950842, 17.96754)
+size = Vector3(5.6366043, 3, 0.5)
+
+[node name="Wall18" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/Corridor_02" unique_id=1210886161]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 14.528572, 1.4950842, 11.057637)
+size = Vector3(21.163567, 3, 0.5)
+
+[node name="Wall19" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/Corridor_02" unique_id=1707538667]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 19.087929, 1.4950842, 9.348016)
+size = Vector3(17.744324, 3, 0.5)
+
+[node name="Roof01" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/Corridor_02" unique_id=508693309]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.947832, 3.4485598, 11.393413)
+size = Vector3(5.368042, 1, 21.149414)
+
+[node name="Roof02" type="CSGBox3D" parent="NavigationRegion3D/Dungeon/Corridor_02" unique_id=394197081]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.810188, 3.4417229, 19.78836)
+size = Vector3(5.416313, 1, 4.3182373)
+
+[node name="Floor" type="CSGBox3D" parent="NavigationRegion3D/Dungeon" unique_id=2058144188]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+size = Vector3(100, 1, 100)
+
+[node name="Enemy" parent="." unique_id=1509548173 instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.821764, 1.0000011, 0)
+
+[node name="Skeleton_Minion" parent="." unique_id=368182729 instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.67664, 0, 0)

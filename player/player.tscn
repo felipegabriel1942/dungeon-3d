@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dsjh5u6rjd6lp"]
+
+[ext_resource type="Script" uid="uid://b3vsq3mfm1wx8" path="res://player/player.gd" id="1_oul6g"]
+[ext_resource type="PackedScene" uid="uid://f4g6gvo82ux1" path="res://weapons/sword.tscn" id="2_g1dw6"]
+[ext_resource type="Script" uid="uid://bo1wb8lrjcjlh" path="res://player/crosshair.gd" id="3_g1dw6"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_oul6g"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oul6g"]
+
+[node name="Player" type="CharacterBody3D" unique_id=880234295]
+collision_mask = 6
+script = ExtResource("1_oul6g")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1072327195]
+mesh = SubResource("CapsuleMesh_oul6g")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1489730535]
+shape = SubResource("CapsuleShape3D_oul6g")
+
+[node name="CameraPivot" type="Node3D" parent="." unique_id=1390358816]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5070683, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=2013161045]
+cull_mask = 4294967293
+
+[node name="Hand" type="Node3D" parent="CameraPivot/Camera3D" unique_id=1915513720]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9256715)
+
+[node name="Sword" parent="CameraPivot/Camera3D/Hand" unique_id=725446846 instance=ExtResource("2_g1dw6")]
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="CameraPivot/Camera3D" unique_id=325438609]
+remote_path = NodePath("../../../CanvasLayer/SubViewportContainer/SubViewport/WeaponCamera")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=773275138]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer" unique_id=1208068460]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer" unique_id=941701774]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="WeaponCamera" type="Camera3D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=16864614]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5070683, 0)
+cull_mask = 1047554
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=371860053]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Crosshair" type="Control" parent="CenterContainer" unique_id=429205019]
+layout_mode = 2
+script = ExtResource("3_g1dw6")
