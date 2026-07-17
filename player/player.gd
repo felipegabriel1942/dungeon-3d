@@ -46,7 +46,6 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
@@ -54,7 +53,6 @@ func _input(event: InputEvent) -> void:
 	
 	if Input.is_action_pressed("attack"):
 		sword.attack()
-
 
 func handle_camera_rotation() -> void:
 	rotate_y(mouse_motion.x)
