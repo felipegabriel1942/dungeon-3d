@@ -1,0 +1,25 @@
+Fase 1 – Melhorar a sensação do combate
+[] Damage Feedback no jogador
+[] Partículas ao atingir o inimigo
+[] Screen shake ao ser atingido
+[] HUD com pontos de vida
+[] HUD com barra de stamina
+
+Fase 2 – Melhorar a movimentação
+[] Mover a câmera de cima para baixo ao andar (Camera Bob)
+[] Movimento da arma ao andar (Weapon Bob)
+[] Dar uma mão ao jogador (em vez da arma flutuando)
+[] Introduzir sons ao andar
+[] Fazer ação de dash
+
+Fase 3 – Enriquecer a dungeon
+[] Decorar a masmorra com baús, mesas, tochas etc.
+[] Introduzir fogo animado nas tochas
+[] Introduzir iluminação na masmorra
+[] Interações com portas (abrir/fechar)
+
+Fase 4 – Expandir o combate
+[] Introduzir arco e flecha
+[] Possibilitar a troca de armas
+[] Criar esqueletos arqueiros
+[] Fazer os esqueletos arqueiros atacarem

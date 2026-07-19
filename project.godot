@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [editor]
 
-movie_writer/movie_file="C:/Users/User/Desktop/dungeon-3d/inimigo-movendo-ate-mim.avi"
+movie_writer/movie_file="C:/Users/User/Desktop/dungeon-3d/base_de_combate.avi"
 
 [global_group]
 

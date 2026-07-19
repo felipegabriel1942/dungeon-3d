@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://cfmylwfihaih4"]
 
+[ext_resource type="Script" uid="uid://cwupxa1w0viuv" path="res://weapons/rust_sword.gd" id="1_jd7p7"]
 [ext_resource type="Texture2D" uid="uid://ckpu21vqq1w13" path="res://weapons/weapons_bits_texture.png" id="1_pdast"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rpn15"]
@@ -41,9 +42,23 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_yprkv")
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pdast"]
+radius = 0.22851563
+height = 2.9932992
+
 [node name="RustSword" type="Node3D" unique_id=1103249232]
+script = ExtResource("1_jd7p7")
 
 [node name="sword_A2" type="Node3D" parent="." unique_id=285546836]
 
 [node name="sword_A" type="MeshInstance3D" parent="sword_A2" unique_id=1516000074]
 mesh = SubResource("ArrayMesh_xqx66")
+
+[node name="Area3D" type="Area3D" parent="sword_A2/sword_A" unique_id=1955815538]
+collision_layer = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="sword_A2/sword_A/Area3D" unique_id=974664919]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1396013, 4.4703484e-08)
+shape = SubResource("CapsuleShape3D_pdast")
+
+[connection signal="body_entered" from="sword_A2/sword_A/Area3D" to="." method="_on_body_entered"]

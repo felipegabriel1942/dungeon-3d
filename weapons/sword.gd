@@ -2,6 +2,7 @@ extends Node3D
 class_name Sword
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var attack_cooldown: Timer = $AttackCooldown
 
 var is_attacking := false
 

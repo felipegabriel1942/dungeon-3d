@@ -270,11 +270,43 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
+[sub_resource type="Animation" id="Animation_byckc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rig_Medium/Skeleton3D/BoneAttachment3D/Hand/RustSword/sword_A2/sword_A/Area3D:monitoring")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Rig_Medium/Skeleton3D/BoneAttachment3D/Hand/RustSword/sword_A2/sword_A/Area3D:monitorable")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4hmy0"]
+_data = {
+&"RESET": SubResource("Animation_byckc")
+}
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j7igh"]
 
 [node name="Skeleton" type="CharacterBody3D" unique_id=1820361878]
 collision_layer = 4
-collision_mask = 11
+collision_mask = 15
 script = ExtResource("1_ncfh6")
 
 [node name="Rig_Medium" type="Node3D" parent="." unique_id=968830667]
@@ -499,6 +531,7 @@ skin = SubResource("Skin_y7f4d")
 skeleton = NodePath("..")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1194710299]
+libraries/ = SubResource("AnimationLibrary_4hmy0")
 libraries/Rig_Medium_CombatMelee = ExtResource("4_byckc")
 libraries/Rig_Medium_General = ExtResource("1_j7igh")
 libraries/Rig_Medium_MovementBasic = ExtResource("5_6knpe")
@@ -509,9 +542,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0827792, 0)
 shape = SubResource("CapsuleShape3D_j7igh")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1995095367]
+avoidance_enabled = true
+radius = 0.01
+use_3d_avoidance = true
 
 [node name="AttackCooldown" type="Timer" parent="." unique_id=542432774]
 wait_time = 2.0
 one_shot = true
 
+[connection signal="hit_body" from="Rig_Medium/Skeleton3D/BoneAttachment3D/Hand/RustSword" to="." method="_on_rust_sword_hit_body"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
+
+[editable path="Rig_Medium/Skeleton3D/BoneAttachment3D/Hand/RustSword"]

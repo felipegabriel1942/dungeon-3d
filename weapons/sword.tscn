@@ -72,6 +72,30 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0, -0.7853982, 0.2617994)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sword/sword_B/Area3D:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sword/sword_B/Area3D:monitorable")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_nisn2"]
 resource_name = "attack_01"
@@ -100,6 +124,30 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0, -0.7853982, 0.2617994), Vector3(0, -0.7853982, -0.2617994), Vector3(-1.0297443, -0.1675516, 0.9302605), Vector3(0, -0.7853982, 0.2617994)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sword/sword_B/Area3D:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.33333334, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sword/sword_B/Area3D:monitorable")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.33333334, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5ogyc"]
 _data = {
@@ -127,5 +175,8 @@ shape = SubResource("CapsuleShape3D_oivwf")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=645608552]
 libraries/ = SubResource("AnimationLibrary_5ogyc")
+
+[node name="AttackCooldown" type="Timer" parent="." unique_id=1419563861]
+one_shot = true
 
 [connection signal="body_entered" from="Sword/sword_B/Area3D" to="." method="_on_area_3d_body_entered"]

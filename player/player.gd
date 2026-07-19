@@ -5,14 +5,19 @@ const JUMP_VELOCITY = 4.5
 
 var mouse_motion := Vector2.ZERO
 
-@export var max_hitpoints := 100
+@export var max_hitpoints := 10
 
 @onready var camera_pivot: Node3D = $CameraPivot
-@onready var sub_viewport: SubViewport = $CanvasLayer/SubViewportContainer/SubViewport
+@onready var sub_viewport: SubViewport = $SubViewportContainer/SubViewport
 @onready var sword: Sword = $CameraPivot/Camera3D/Hand/Sword
+@onready var damage_animation_player: AnimationPlayer = $DamageTexture/DamageAnimationPlayer
 
 var hitpoints: int = max_hitpoints:
 	set(value):
+		if value < hitpoints:
+			damage_animation_player.stop()
+			damage_animation_player.play("TakeDamage")
+		
 		hitpoints = value
 		
 		if hitpoints <= 0:
@@ -63,3 +68,6 @@ func handle_camera_rotation() -> void:
 	)
 	
 	mouse_motion = Vector2.ZERO
+
+func take_damage(amount: int) -> void:
+	hitpoints -= amount

@@ -1,10 +1,9 @@
 extends CharacterBody3D
 
-
 const SPEED = 2.0
 const JUMP_VELOCITY = 4.5
 
-@export var max_hitpoints := 5
+@export var max_hitpoints := 3
 @export var attack_range := 3
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -13,7 +12,7 @@ const JUMP_VELOCITY = 4.5
 
 var player
 var provoked := false
-var aggro_range := 12.0
+var aggro_range := 5.0
 var is_idle := true
 var is_hurt := false
 var is_walking := false
@@ -46,7 +45,7 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	var next_position = navigation_agent_3d.get_next_path_position()
 		
-	print(is_hurt, "; ", is_dead, "; ", is_attacking)	
+	#print(is_hurt, "; ", is_dead, "; ", is_attacking)	
 		
 	if is_hurt or is_dead or is_attacking:
 		return;
@@ -70,15 +69,15 @@ func _physics_process(delta: float) -> void:
 		else:
 			attack_cooldown.stop()
 
-	if direction:
-		look_at_target(direction)
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
-		
-		animation_player.play("Rig_Medium_MovementBasic/Walking_A")
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		if direction:
+			look_at_target(direction)
+			velocity.x = direction.x * SPEED
+			velocity.z = direction.z * SPEED
+			
+			animation_player.play("Rig_Medium_MovementBasic/Walking_A")
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+			velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
 
@@ -97,3 +96,7 @@ func _on_animation_finished(anim_name: StringName) -> void:
 	
 	if anim_name.contains("Attack"):
 		is_attacking = false
+
+func _on_rust_sword_hit_body(body: Node3D) -> void:
+	if body.has_method("take_damage"):
+		body.take_damage(1)
