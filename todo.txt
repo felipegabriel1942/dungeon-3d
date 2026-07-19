@@ -1,5 +1,5 @@
 Fase 1 – Melhorar a sensação do combate
-[] Damage Feedback no jogador
+[x] Damage Feedback no jogador
 [] Partículas ao atingir o inimigo
 [] Screen shake ao ser atingido
 [] HUD com pontos de vida

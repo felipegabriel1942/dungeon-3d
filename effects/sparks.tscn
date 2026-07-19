@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://b267x7yntxpbb"]
+
+[sub_resource type="Curve" id="Curve_7xe5b"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.9922779, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_2q01s"]
+curve = SubResource("Curve_7xe5b")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7xe5b"]
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 5.0
+scale_min = 0.5
+scale_curve = SubResource("CurveTexture_2q01s")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7xe5b"]
+emission_enabled = true
+emission = Color(1, 1, 0, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_2q01s"]
+material = SubResource("StandardMaterial3D_7xe5b")
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="Animation" id="Animation_2q01s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_7xe5b"]
+resource_name = "Spark"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2q01s"]
+_data = {
+&"RESET": SubResource("Animation_2q01s"),
+&"Spark": SubResource("Animation_7xe5b")
+}
+
+[node name="Sparks" type="GPUParticles3D" unique_id=843346898]
+top_level = true
+cast_shadow = 0
+emitting = false
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_7xe5b")
+draw_pass_1 = SubResource("BoxMesh_2q01s")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=632353987]
+libraries/ = SubResource("AnimationLibrary_2q01s")
+autoplay = &"Spark"

@@ -5,10 +5,12 @@ const JUMP_VELOCITY = 4.5
 
 @export var max_hitpoints := 3
 @export var attack_range := 3
+@export var sparks: PackedScene
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 @onready var attack_cooldown: Timer = $AttackCooldown
+@onready var sparks_marker: Marker3D = $SparksMarker
 
 var player
 var provoked := false
@@ -83,6 +85,10 @@ func _physics_process(delta: float) -> void:
 
 func take_damage(amount: int) -> void:
 	hitpoints -= amount
+	var sparks = sparks.instantiate()
+	add_child(sparks)
+	sparks.global_position = sparks_marker.global_position
+	
 	
 func look_at_target(direction: Vector3) -> void:
 	var adjusted_direction = direction
