@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cnfhqugmr5ntm"]
+
+[ext_resource type="Script" uid="uid://btnm2430davw0" path="res://ui/game_ui.gd" id="1_7hrjk"]
+[ext_resource type="Texture2D" uid="uid://c2j2vabwk76a6" path="res://assets/art/health-cross.png" id="1_dcmab"]
+[ext_resource type="FontFile" uid="uid://dn4owx7dn6mir" path="res://assets/font/Staatliches-Regular.ttf" id="2_w46tp"]
+
+[node name="GameUI" type="CanvasLayer" unique_id=959072362]
+script = ExtResource("1_7hrjk")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=222930205]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1682653836]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=429588840]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=557182518]
+layout_mode = 2
+texture = ExtResource("1_dcmab")
+stretch_mode = 2
+
+[node name="LifeLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=600961599]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_w46tp")
+theme_override_font_sizes/font_size = 41
+text = "100 / 100"

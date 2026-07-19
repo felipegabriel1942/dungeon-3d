@@ -5,7 +5,7 @@ const JUMP_VELOCITY = 4.5
 
 var mouse_motion := Vector2.ZERO
 
-@export var max_hitpoints := 10
+@export var max_hitpoints := 100
 
 @onready var camera_pivot: Node3D = $CameraPivot
 @onready var sub_viewport: SubViewport = $SubViewportContainer/SubViewport
@@ -19,6 +19,8 @@ var hitpoints: int = max_hitpoints:
 			damage_animation_player.play("TakeDamage")
 		
 		hitpoints = value
+		
+		EventBus.health_changed.emit(value, max_hitpoints)
 		
 		if hitpoints <= 0:
 			get_tree().reload_current_scene()

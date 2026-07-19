@@ -15,9 +15,13 @@ run/main_scene="uid://67m26yjthywb"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+EventBus="*uid://c4rkgudkd0o5h"
+
 [editor]
 
-movie_writer/movie_file="C:/Users/User/Desktop/dungeon-3d/base_de_combate.avi"
+movie_writer/movie_file="C:/Users/User/Desktop/dungeon-3d/feedback_de_combate.avi"
 
 [global_group]
 

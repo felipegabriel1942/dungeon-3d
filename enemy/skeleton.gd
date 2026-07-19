@@ -3,7 +3,7 @@ extends CharacterBody3D
 const SPEED = 2.0
 const JUMP_VELOCITY = 4.5
 
-@export var max_hitpoints := 3
+@export var max_hitpoints := 40
 @export var attack_range := 3
 @export var sparks: PackedScene
 
@@ -11,6 +11,7 @@ const JUMP_VELOCITY = 4.5
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 @onready var attack_cooldown: Timer = $AttackCooldown
 @onready var sparks_marker: Marker3D = $SparksMarker
+@onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
 
 var player
 var provoked := false
@@ -24,11 +25,10 @@ var is_attacking := false
 var hitpoints: int = max_hitpoints:
 	set(value):
 		hitpoints = value
-		
-		print(hitpoints)
-		
+
 		if hitpoints <= 0:
 			is_dead = true
+			collision_shape_3d.disabled = true
 			animation_player.play("Rig_Medium_General/Death_A")
 			await get_tree().create_timer(2.0).timeout
 			queue_free()
@@ -104,5 +104,5 @@ func _on_animation_finished(anim_name: StringName) -> void:
 		is_attacking = false
 
 func _on_rust_sword_hit_body(body: Node3D) -> void:
-	if body.has_method("take_damage"):
-		body.take_damage(1)
+	if body.has_method("take_damage") and !is_dead:
+		body.take_damage(20)

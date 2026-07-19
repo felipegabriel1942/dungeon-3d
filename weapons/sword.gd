@@ -11,4 +11,4 @@ func attack() -> void:
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.has_method("take_damage"):
-		body.take_damage(1)
+		body.take_damage(20)
