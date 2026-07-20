@@ -2,7 +2,7 @@ Fase 1 – Melhorar a sensação do combate
 [x] Damage Feedback no jogador
 [x] Partículas ao atingir o inimigo
 [] Screen shake ao ser atingido
-[] HUD com pontos de vida
+[x] HUD com pontos de vida
 [] HUD com barra de stamina
 
 Fase 2 – Melhorar a movimentação

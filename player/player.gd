@@ -9,8 +9,11 @@ var mouse_motion := Vector2.ZERO
 
 @onready var camera_pivot: Node3D = $CameraPivot
 @onready var sub_viewport: SubViewport = $SubViewportContainer/SubViewport
-@onready var sword: Sword = $CameraPivot/Camera3D/Hand/Sword
+@onready var sword: Sword = $CameraPivot/BobPivot/ShakePivot/Camera3D/Hand/Sword
 @onready var damage_animation_player: AnimationPlayer = $DamageTexture/DamageAnimationPlayer
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
+var is_walking := false
 
 var hitpoints: int = max_hitpoints:
 	set(value):
@@ -44,12 +47,24 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("move_left", "move_right", "move_foward", "move_back")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
+	
+	var horizontal_speed = Vector2(velocity.x, velocity.z).length()
+	var moving = horizontal_speed > 0.1 and is_on_floor()
+	
+	if moving != is_walking:
+		is_walking = moving
+		
+		if is_walking:
+			animation_player.play("WalkBob")
+		else:
+			animation_player.stop()
 
 	move_and_slide()
 

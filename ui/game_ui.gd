@@ -7,4 +7,4 @@ func _ready() -> void:
 	EventBus.health_changed.connect(on_health_changed)
 
 func on_health_changed(current, max) -> void:
-	life_label.text = "%03d / %03d" % [current, max]
+	life_label.text = "%03d/%03d" % [current, max]
